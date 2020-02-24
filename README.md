@@ -33,23 +33,52 @@ Einige Regeln für das Übersetzen
 
 Wie sieht die Ausgabe dieses Programms aus? 
 
-```java
+```
 int number = 12; 
 System.out.println(number/5);
 System.out.println(number/5.0);
 number += 7; 
 System.out.println(number);
 ```
+Die Ausgabe wird so aussehen:
+```java 
+2
+2.4 /*(int kann zwar eigendlich keine Kommazahlen speichern, IntelliJ wandelt aber,
+wenn man eine int durch eine double dividiert den Typ automatisch auf den 
+höherwertigeren um.)*/
+19
+```
+
 
 ## Datentypen (5 Punkte)
 
 Welche Datentypen kennst du? 
 Gibt es Unterschiede bei der Verwendung zwischen einem `int` und einem `Integer`? 
 
+Ein "int" ist ein einfacher Datentyp, der nur ganzzahlige Zahlen speichern kann. 
+Ein "Integer" ist ein komplexer Datentyp. Er kann den Wert "NULL" (gesprochen Nall, entspricht einem leeren Raum)
+annehmen. 
+
 ## Scope (5 Punkte) 
 
 Was ist der Scope einer Variable? 
 Erkläre anhand eines kleinen Beispielprogramms.
+
+```
+1... system.out.println("Heute ist doch ein schöner Tag")
+2... system.out.prontln("Wie oft möchte ich heute jubeln?")
+3... for(int i == 0; i < 1000; i++){
+4... system.out.println("JUUHHUUUU!!!")
+5... }
+6... int freude = i * 1000
+7... system.out.println("Ich freue mich " + freude + " Mal am Tag!")
+```
+Die Variable "i" wird in der Zeile 3 in der For-Schleife erzeugt und "lebt" nur zwischen den geschwungenen 
+Klammern in den Zeilen 3 und 5. Die Variable "freude" möchte auf die Variable "i" zugreifen, aber in der Zeile 6 
+ist die Variable "i" nicht deklariert (und initialisiert). 
+Den "Lebensraum" einer Variable nennt man Scope.
+
+
 
 
 
